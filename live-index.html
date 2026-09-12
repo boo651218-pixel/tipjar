@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>TipJar — accept TRX &amp; USDT-TRC20 donations with one &lt;script&gt; tag | tipjar</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="TipJar — accept TRX &amp; USDT-TRC20 donations with one &lt;script&gt; tag" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Accept TRX &amp; USDT-TRC20 donations with one script tag. No backend." />
+<meta property="og:description" content="Accept TRX &amp; USDT-TRC20 donations with one script tag. No backend." />
+<link rel="canonical" href="https://boo651218-pixel.github.io/tipjar/" />
+<meta property="og:url" content="https://boo651218-pixel.github.io/tipjar/" />
+<meta property="og:site_name" content="tipjar" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="TipJar — accept TRX &amp; USDT-TRC20 donations with one &lt;script&gt; tag" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Accept TRX &amp; USDT-TRC20 donations with one script tag. No backend.","headline":"TipJar — accept TRX &amp; USDT-TRC20 donations with one &lt;script&gt; tag","name":"tipjar","url":"https://boo651218-pixel.github.io/tipjar/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/tipjar/assets/css/style.css?v=465ea3c8f8761062fd2490395cfb0d9833a85d1e">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/tipjar/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://boo651218-pixel.github.io/tipjar/">tipjar</a></h1>
+      
+
+      <h1 id="tipjar--accept-trx--usdt-trc20-donations-with-one-script-tag">TipJar — accept TRX &amp; USDT-TRC20 donations with one <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> tag</h1>
+
+<p><strong>No backend. No database. No server. No npm build. No account.</strong>
+Paste one tag, get a donation button with QR code, wallet deep-links and
+optional on-chain receipt confirmation.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/gh/boo651218-pixel/tipjar@main/src/tipjar.js"</span>
+        <span class="na">data-address=</span><span class="s">"TYourAddressHere"</span>
+        <span class="na">data-token=</span><span class="s">"USDT"</span>
+        <span class="na">data-amounts=</span><span class="s">"5,10,25,100"</span>
+        <span class="na">defer</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>Live demo: https://boo651218-pixel.github.io/tipjar/</p>
+
+<hr />
+
+<h2 id="why-this-exists">Why this exists</h2>
+
+<p>Accepting USDT-TRC20 on a static site (GitHub Pages, Notion, Carrd, a blog,
+a Linktree, a Telegram bot’s landing page) currently means either:</p>
+
+<ol>
+  <li>pasting a 34-character address as plain text (nobody scans it, nobody pays), or</li>
+  <li>signing up for a hosted payment processor that takes 2–5 %, needs KYC, and
+can freeze the payout.</li>
+</ol>
+
+<p>TipJar is neither. It is 100 % client-side. The money goes <strong>directly to your
+address</strong> — TipJar never touches a cent, never sees a key, never proxies a
+transaction. There is nothing to breach.</p>
+
+<h2 id="features">Features</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Zero backend</td>
+      <td>static JS + CSS injected at runtime, works on any host incl. <code class="language-plaintext highlighter-rouge">file://</code></td>
+    </tr>
+    <tr>
+      <td>TRX + any TRC20 token</td>
+      <td>native TRX, USDT out of the box, <code class="language-plaintext highlighter-rouge">data-contract</code> for anything else</td>
+    </tr>
+    <tr>
+      <td>QR + deep links</td>
+      <td>one QR that TronLink / Trust / Ledger Live / exchanges all read</td>
+    </tr>
+    <tr>
+      <td>Preset &amp; custom amounts</td>
+      <td><code class="language-plaintext highlighter-rouge">data-amounts="5,10,25"</code> + free-text field, decimal-safe</td>
+    </tr>
+    <tr>
+      <td>Copy-to-clipboard</td>
+      <td>address + amount, with visual confirmation</td>
+    </tr>
+    <tr>
+      <td>On-chain receipts (optional)</td>
+      <td>point it at your <strong>own</strong> free TronGrid key and it watches for incoming transfers, fires <code class="language-plaintext highlighter-rouge">tipjar:confirmed</code></td>
+    </tr>
+    <tr>
+      <td>Themable</td>
+      <td>light/dark, accent colour, 3 layouts (floating pill, inline card, modal-only)</td>
+    </tr>
+    <tr>
+      <td>Accessible</td>
+      <td>focus trap, <code class="language-plaintext highlighter-rouge">Esc</code> to close, ARIA labels, keyboard-only operable</td>
+    </tr>
+    <tr>
+      <td>No tracking</td>
+      <td>no analytics, no external requests unless you turn receipts on</td>
+    </tr>
+    <tr>
+      <td>~9 KB gzipped</td>
+      <td>no dependencies except the bundled QR generator</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="quickstart">Quickstart</h2>
+
+<p>Drop the tag anywhere before <code class="language-plaintext highlighter-rouge">&lt;/body&gt;</code>. A floating “☕ Tip” pill appears
+bottom-right; clicking it opens the tip modal.</p>
+
+<p>Inline instead of floating:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"tip"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"src/tipjar.js"</span> <span class="na">data-address=</span><span class="s">"TYourAddressHere"</span> <span class="na">data-target=</span><span class="s">"#tip"</span> <span class="na">defer</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>Programmatic:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">TipJar</span> <span class="o">=</span> <span class="p">{</span> <span class="na">address</span><span class="p">:</span> <span class="dl">'</span><span class="s1">TYourAddressHere</span><span class="dl">'</span><span class="p">,</span> <span class="na">token</span><span class="p">:</span> <span class="dl">'</span><span class="s1">USDT</span><span class="dl">'</span><span class="p">,</span> <span class="na">amounts</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span> <span class="p">};</span>
+<span class="c1">// then, after the script loads:</span>
+<span class="nx">TipJar</span><span class="p">.</span><span class="nx">open</span><span class="p">();</span>            <span class="c1">// show the modal</span>
+<span class="nx">TipJar</span><span class="p">.</span><span class="nx">open</span><span class="p">({</span> <span class="na">amount</span><span class="p">:</span> <span class="mi">25</span> <span class="p">});</span>
+<span class="nx">TipJar</span><span class="p">.</span><span class="nx">setToken</span><span class="p">(</span><span class="dl">'</span><span class="s1">TRX</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">TipJar</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>All attributes are <code class="language-plaintext highlighter-rouge">data-*</code> on the <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> tag (or camelCase keys on
+<code class="language-plaintext highlighter-rouge">window.TipJar</code>, script-tag config wins).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Default</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data-address</code></td>
+      <td><em>(required)</em></td>
+      <td>TRON base58 recipient address</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data-token</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TRX</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TRX</code>, <code class="language-plaintext highlighter-rouge">USDT</code>, or a contract address</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data-contract</code></td>
+      <td>–</td>
+      <td>explicit TRC20 contract address (overrides <code class="language-plaintext highlighter-rouge">data-token</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data-decimals</code></td>
+      <td><code class="language-plaintext highlighter-rouge">6</code></td>
+      <td>token decimals, used with <code class="language-plaintext highlighter-rouge">data-contract</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data-symbol</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TRX</code></td>
+      <td>display symbol, used with <code class="language-plaintext highlighter-rouge">data-contract</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data-amounts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">1,5,10,50</code></td>
+      <td>comma-separated presets</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data-title</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Leave a tip</code></td>
+      <td>modal heading</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data-message</code></td>
+      <td>–</td>
+      <td>one line of supporting copy</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data-target</code></td>
+      <td>–</td>
+      <td>CSS selector for inline mount (else floating pill)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data-layout</code></td>
+      <td><code class="language-plaintext highlighter-rouge">pill</code></td>
+      <td><code class="language-plaintext highlighter-rouge">pill</code> | <code class="language-plaintext highlighter-rouge">card</code> | <code class="language-plaintext highlighter-rouge">button</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data-theme</code></td>
+      <td><code class="language-plaintext highlighter-rouge">auto</code></td>
+      <td><code class="language-plaintext highlighter-rouge">auto</code> | <code class="language-plaintext highlighter-rouge">light</code> | <code class="language-plaintext highlighter-rouge">dark</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data-accent</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#EF0057</code></td>
+      <td>any CSS colour</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data-label</code></td>
+      <td><code class="language-plaintext highlighter-rouge">☕ Tip</code></td>
+      <td>pill/button text</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data-min</code></td>
+      <td><code class="language-plaintext highlighter-rouge">0.1</code></td>
+      <td>minimum accepted amount (warning only)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data-trongrid</code></td>
+      <td>–</td>
+      <td>full node base URL, defaults to <code class="language-plaintext highlighter-rouge">https://api.trongrid.io</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data-api-key</code></td>
+      <td>–</td>
+      <td><strong>your</strong> free TronGrid key — enables receipt watching</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data-watch</code></td>
+      <td><code class="language-plaintext highlighter-rouge">off</code></td>
+      <td><code class="language-plaintext highlighter-rouge">on</code> starts polling for incoming transfers</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="on-chain-receipts">On-chain receipts</h3>
+
+<p>If you supply <code class="language-plaintext highlighter-rouge">data-api-key</code> (free from
+<a href="https://www.trongrid.io/">TronGrid</a>) and <code class="language-plaintext highlighter-rouge">data-watch="on"</code>, TipJar polls the
+public node for transfers <em>into</em> your address every 20 s and emits an event:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">tipjar:confirmed</span><span class="dl">'</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// e.detail = { txid, amount, token, from }</span>
+  <span class="nx">unlockStuff</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">detail</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Nothing is stored, no webhook, no server. The poll only reads public chain data
+that anyone can query. <strong>TipJar cannot and does not move funds — it has no keys.</strong></p>
+
+<h2 id="security-notes-read-this">Security notes (read this)</h2>
+
+<ul>
+  <li>The address is rendered as text and encoded into a QR you can verify by eye.
+Always check the first/last 4 characters before trusting a QR.</li>
+  <li>Validate <code class="language-plaintext highlighter-rouge">data-address</code> server-side never applies (there is no server) — but
+the widget rejects anything that is not <code class="language-plaintext highlighter-rouge">T</code> + 33 base58 chars, so typos surface
+immediately instead of silently sending funds into the void.</li>
+  <li>TipJar is MIT licensed and 250 lines. Read it. It is meant to be read.</li>
+</ul>
+
+<h2 id="recipes">Recipes</h2>
+
+<p><strong>Blog (Jekyll / Hugo / Astro / WordPress)</strong> — paste into the footer include.
+<strong>Notion / Carrd</strong> — embed an HTML block with the tag.
+<strong>Telegram / Discord bio</strong> — deploy the demo page, share the link.
+<strong>Podcast shownotes</strong> — one line, per-episode amount presets.</p>
+
+<h2 id="license">License</h2>
+
+<p>MIT. Use it commercially, fork it, rebrand it.</p>
+
+<p>TipJar is free and will stay free. If it saves you an afternoon, a tip to
+<code class="language-plaintext highlighter-rouge">TYourAddressHere</code> (the one you configure) is a nice way to say so — the
+maintainer’s address is in the demo page’s <code class="language-plaintext highlighter-rouge">data-address</code>.</p>
+
+<hr />
+
+<h2 id="need-something-built-on-this">Need something built on this?</h2>
+
+<p>I take small paid jobs in this exact niche — TRON/TronJS data pulls, token
+transfer CSV exports, balance-history reports, custom checkout flows, sybil /
+airdrop-distribution filters, explorer scripts. Fixed price, delivered in days,
+paid in USDT-TRC20.</p>
+
+<p>Open an <a href="https://github.com/boo651218-pixel/tipjar/issues">issue</a> with what you
+need and I’ll tell you honestly whether it’s worth paying for.</p>
+
+
+      
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        This site is open source. <a href="https://github.com/boo651218-pixel/tipjar/edit/main/README.md">Improve this page</a>.
+      </div>
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
